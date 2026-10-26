@@ -1,0 +1,13 @@
+{
+  "_comment": "Produced by the tailoring agent while reading the JD (Step 2), not by any script — extracting these terms is a semantic-understanding task, not a regex task. Save as requirements.json next to the JD's output, e.g. outputs/<company>-<role>/requirements.json.",
+  "_fields": {
+    "required": "Hard requirements: skills/tools/quals the JD states as required. Use the JD's own phrasing, not a synonym (e.g. if the JD says 'capital markets', write 'capital markets', not 'financial markets').",
+    "preferred": "Soft/'nice to have' skills or quals — scored separately, never gates a disqualification.",
+    "responsibilities": "Short phrases capturing the JD's own language for what the role actually does day to day (e.g. 'scenario analysis', 'trade opportunities identification'). These feed the semantic gap check (Layer 3), not the exact-match gate (Layer 1)."
+  },
+  "company": "Example Corp",
+  "role": "Example Role",
+  "required": ["term one", "term two"],
+  "preferred": ["term three"],
+  "responsibilities": ["short phrase describing a core duty"]
+}

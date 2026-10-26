@@ -1,0 +1,38 @@
+{
+  "_comment": "Produced by the tailoring agent in Step 3.75, alongside requirements.json. Like that file, this is a semantic-understanding step you do while holding the JD, the tailored resume and the cover letter - not something a script or the browser agent infers. Save as outputs/<company>-<role>/application-answers.json.",
+  "_fields": {
+    "verification": "What the LIVE posting's company and title must contain for this packet to be the right one. Take the tokens from the JD itself. Keep them tight enough to catch a wrong posting and loose enough to survive title punctuation (e.g. 'Marketing Coordinator' rather than 'Marketing Coordinator, Brand Team (12-Month Contract)').",
+    "answers": "Pre-written prose for the questions application forms actually ask. Every one traces to the tailored resume.tex, cover-letter.tex, or context/. First person, concrete, no em dashes, no stock phrases.",
+    "short_variants": "Compressed versions for boxes with character limits (200-500 chars is common). Trim from the end; never truncate mid-sentence.",
+    "anticipate": "Briefing notes for the candidate on what this posting is likely to probe, including the honest gaps carried over from changelog.md and the Step 2.5 scan. These are NOT answers and must never be typed into a form.",
+    "needs_candidate": "Application-specific unknowns, left null. Global unknowns (work authorization, sponsorship, relocation, salary, start date, address) live in context/profile/application-profile.json and are never duplicated here."
+  },
+  "company": "Example Corp",
+  "role": "Example Role",
+  "jd_path": "inputs/ExampleCorp-Role.txt",
+  "attachments": {
+    "resume": "outputs/example-corp-role/resume.pdf",
+    "cover_letter": "outputs/example-corp-role/cover-letter.pdf"
+  },
+  "verification": {
+    "posting_company_must_contain_any_of": ["Example Corp"],
+    "posting_title_must_contain_any_of": ["Example Role"]
+  },
+  "answers": {
+    "why_this_company": "One concrete, posting-specific reason. Never interchangeable across firms.",
+    "why_this_role": "What the day-to-day work is and why it fits what they have actually done.",
+    "most_relevant_experience": "The single strongest documented example for THIS posting, with its real numbers.",
+    "proudest_project": "A different example from most_relevant_experience where possible, to widen coverage across a form that asks both.",
+    "additional_info": null
+  },
+  "short_variants": {
+    "why_this_company_short": "Same substance as why_this_company, compressed to roughly 200-300 characters."
+  },
+  "anticipate": {
+    "items": ["Screens, tests or gaps this posting will probably raise"]
+  },
+  "needs_candidate": {
+    "salary_expectation": null,
+    "how_did_you_hear_about_us": null
+  }
+}

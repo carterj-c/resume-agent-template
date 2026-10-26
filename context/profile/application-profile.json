@@ -1,0 +1,64 @@
+{
+  "_comment": "Invariant identity fields used to fill job application forms. Read by the application-filler agent. Anything null is unknown and must never be guessed or inferred: ask. See context/profile/README.md.",
+  "identity": {
+    "full_name": null,
+    "first_name": null,
+    "last_name": null,
+    "email": null,
+    "phone": null,
+    "phone_device_type": null,
+    "linkedin": null,
+    "website": null,
+    "street_address": null,
+    "city": null,
+    "province": null,
+    "postal_code": null,
+    "country": null
+  },
+  "education": {
+    "school": null,
+    "location": null,
+    "degree": null,
+    "field_of_study": null,
+    "start_month": null,
+    "graduation_month": null,
+    "gpa": null,
+    "gpa_scale": null
+  },
+  "needs_candidate": {
+    "_comment": "Still unknown. The agent must stop and ask rather than infer any of these. When resolved, fill the value and add a short _note saying when it was confirmed.",
+    "salary_expectation": null,
+    "notice_period": null,
+    "how_did_you_hear_about_us": null,
+    "referral_name": null,
+    "previously_applied_or_employed": null
+  },
+  "work_and_logistics": {
+    "_comment": "Fill in once confirmed. Applies to ALL applications.",
+    "work_authorization": null,
+    "requires_sponsorship": null,
+    "willing_to_relocate": null,
+    "earliest_start_date": null,
+    "years_of_relevant_experience": null
+  },
+  "never_answer": {
+    "_comment": "The agent leaves these blank for the candidate every time, without exception. They are voluntary legal self-identification or attestations.",
+    "fields": [
+      "race / ethnicity",
+      "gender / sex",
+      "pronouns",
+      "veteran status",
+      "disability status",
+      "date of birth",
+      "sexual orientation",
+      "any EEO or voluntary self-identification section",
+      "any signature, initials, or 'I certify that the above is true' attestation",
+      "any checkbox accepting terms, privacy policy, or background-check consent",
+      "any 'I acknowledge these answers are my own' or authenticity attestation"
+    ]
+  },
+  "documents": {
+    "_comment": "Optional repo-root files to attach when a form requires them, e.g. \"transcript\": \"transcript.pdf\". Resume and cover letter always come from outputs/<company>-<role>/.",
+    "transcript": null
+  }
+}

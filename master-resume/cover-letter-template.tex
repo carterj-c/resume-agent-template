@@ -1,0 +1,85 @@
+%-------------------------
+% Cover letter template - reuses the resume's preamble/header so the two
+% documents read as a matched pair. Fill in the bracketed placeholders per
+% application; leave everything else (packages, margins, header block) as-is.
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\usepackage{parskip}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.25in}
+
+% Glyph-to-unicode mapping improves copy-paste/ATS text extraction, but the
+% primitives it relies on only exist under pdfTeX (not XeTeX/LuaTeX engines
+% some compilers, e.g. tectonic, default to).
+%
+% On those engines the mapping is simply absent, and xdvipdfmx emits no usable
+% ToUnicode entry for the f-ligatures: "efficiency" is drawn with a single
+% U+FB00 glyph and pdftotext extracts it as "e<ffi>ciency", so an ATS keyword
+% match on the word silently fails. Suppressing the common f-ligatures is the
+% equivalent fix there - nothing else in the rendering changes.
+\ifpdftex
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\else
+  \usepackage{fontspec}
+  \setmainfont{lmroman10-regular.otf}[
+    BoldFont       = lmroman10-bold.otf,
+    ItalicFont     = lmroman10-italic.otf,
+    BoldItalicFont = lmroman10-bolditalic.otf,
+    SmallCapsFont  = lmromancaps10-regular.otf,
+    Ligatures      = NoCommon]
+\fi
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlength{\parindent}{0pt}
+
+\newcommand{\contactlink}[2]{\href{#1}{\underline{\raisebox{0pt}[\height][0pt]{#2}\vphantom{y}}}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape [Your Name]} \\ \vspace{1pt}
+    \footnotesize [555-555-5555] $|$ \contactlink{mailto:you@example.com}{you@example.com} $|$
+    \contactlink{https://linkedin.com/in/your-handle}{linkedin.com/in/your-handle}
+    $|$ \contactlink{https://example.com}{example.com}
+\end{center}
+
+\vspace{4pt}
+\today
+
+\vspace{4pt}
+[SALUTATION — "Dear Hiring Team," unless the JD itself names a person]
+
+[BODY — 3-4 short paragraphs, 250-350 words total. See AGENTS.md Step 3.5
+for the required structure and constraints. No em dashes anywhere in this
+document — use a period, comma, or parentheses instead.]
+
+\vspace{4pt}
+Sincerely, \\
+{[Your Name]}
+
+\end{document}

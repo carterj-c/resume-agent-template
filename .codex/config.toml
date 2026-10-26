@@ -1,0 +1,12 @@
+# Codex project config. Model names mirror the setup this template was built
+# from; change them to any models your Codex account has access to.
+model = "gpt-6-sol"
+model_reasoning_effort = "high"
+
+[agents]
+default_subagent_model = "gpt-6-luna"
+default_subagent_reasoning_effort = "medium"
+
+[agents.application-filler]
+description = "Fill a job application form in the browser from this repository's tailored packet for that posting. Never submits."
+config_file = "agents/application-filler.toml"

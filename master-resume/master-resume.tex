@@ -1,0 +1,153 @@
+%-------------------------
+% Resume in LaTeX - master copy
+% Based off of: Jake Gutierrez template
+% Replace every [PLACEHOLDER] with your own content. Keep the preamble,
+% macros and spacing as-is; the agent treats them as fixed.
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=0.15in, itemsep=1pt, topsep=1pt}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins (subtly extended page height for fit)
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-.7in}  % increased from -.5in
+\addtolength{\textheight}{1.25in} % increased from 1.0in
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-8pt}]
+
+% Glyph-to-unicode mapping improves copy-paste/ATS text extraction, but the
+% primitives it relies on only exist under pdfTeX (not XeTeX/LuaTeX engines
+% some compilers, e.g. tectonic, default to).
+%
+% On those engines the mapping is simply absent, and xdvipdfmx emits no usable
+% ToUnicode entry for the f-ligatures: "efficiency" is drawn with a single
+% U+FB00 glyph and pdftotext extracts it as "e<ffi>ciency", so an ATS keyword
+% match on the word silently fails. Suppressing the common f-ligatures is the
+% equivalent fix there - nothing else in the rendering changes.
+\ifpdftex
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\else
+  \usepackage{fontspec}
+  \setmainfont{lmroman10-regular.otf}[
+    BoldFont       = lmroman10-bold.otf,
+    ItalicFont     = lmroman10-italic.otf,
+    BoldItalicFont = lmroman10-bolditalic.otf,
+    SmallCapsFont  = lmromancaps10-regular.otf,
+    Ligatures      = NoCommon]
+\fi
+
+% Custom commands
+% Contact links: normalize the underline depth so every link's rule sits at the
+% same height regardless of whether its text has descenders (g, j, /).
+\newcommand{\contactlink}[2]{\href{#1}{\underline{\raisebox{0pt}[\height][0pt]{#2}\vphantom{y}}}}
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape [Your Name]} \\ \vspace{1pt}
+    \footnotesize [555-555-5555] $|$ \contactlink{mailto:you@example.com}{you@example.com} $|$
+    \contactlink{https://linkedin.com/in/your-handle}{linkedin.com/in/your-handle}
+    $|$ \contactlink{https://example.com}{example.com}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading{[University Name]}{[City, Province/State]}{[Degree, Major]}{[2022 -- 2026]}
+    \resumeItemListStart
+      \resumeItem{GPA: [x.xx / x.x]}
+      \resumeItem{Relevant Coursework: [Course One, Course Two, Course Three]}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading{[Employer] - [Job Title]}{[Mon YYYY -- Mon YYYY]}{[City, Province/State]}{}
+    \resumeItemListStart
+      \resumeItem{[Action verb + what you did + measurable result, e.g. "Reduced X by 20\% by doing Y."]}
+      \resumeItem{[Second accomplishment bullet.]}
+      \resumeItem{[Third accomplishment bullet.]}
+    \resumeItemListEnd
+
+    \resumeSubheading{[Employer] - [Job Title]}{[Mon YYYY -- Mon YYYY]}{[City, Province/State]}{}
+    \resumeItemListStart
+      \resumeItem{[Accomplishment bullet.]}
+      \resumeItem{[Accomplishment bullet.]}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects \& Activities}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading{\textbf{[Project, Club or Competition Name]}}{[Mon YYYY]}
+    \resumeItemListStart
+      \resumeItem{[What it was and what you built or led.]}
+      \resumeItem{[The result, with a number if there is one.]}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+% Keep "Tools:" as the LAST line: the agent's overflow check (AGENTS.md Step 3)
+% confirms the page is not cut off by looking for it at the bottom.
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages:} [e.g. English (native), French (intermediate)] \\
+     \textbf{Specialties:} [Core competencies, in the words job postings in your field use] \\
+     \textbf{Tools:} [Software and tools you actually use]
+    }}
+ \end{itemize}
+
+\end{document}
